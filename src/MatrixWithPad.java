@@ -12,6 +12,7 @@ public class MatrixWithPad {
             start = scan.nextInt();
             end = scan.nextInt();
             size = scan.nextInt();
+            scan.close();
         } catch (InputMismatchException e) {
             //TODO: handle exception
             System.out.println("Masukkan input integer");
