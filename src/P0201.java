@@ -18,6 +18,17 @@ public class P0201 {
             return;
         }
 
+        for (int i = start, j = 1; (start < end) ? i <= end : i >= end; j++) {
+            System.out.printf("%03d ", i);
+            if (j % size == 0) {
+                System.out.println();
+            }
+            if (start < end) {
+                i++;
+            } else {
+                i--;
+            }
+        }
 
     }
 }
