@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class P0201 {
@@ -6,9 +7,17 @@ public class P0201 {
         Scanner scan = new Scanner(System.in);
 
         int start, end, size;
-        start = scan.nextInt();
-        end = scan.nextInt();
-        size = scan.nextInt();
         
+        try {
+            start = scan.nextInt();
+            end = scan.nextInt();
+            size = scan.nextInt();
+        } catch (InputMismatchException e) {
+            //TODO: handle exception
+            System.out.println("Masukkan input integer");
+            return;
+        }
+
+
     }
 }
