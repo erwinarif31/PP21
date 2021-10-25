@@ -14,22 +14,20 @@ public class MatrixWithPad {
             size = scan.nextInt();
             scan.close();
         } catch (InputMismatchException e) {
-            //TODO: handle exception
             System.out.println("Masukkan input integer");
             return;
         }
-
-        for (int i = start, j = 1; (start < end) ? i <= end : i >= end; j++) {
-            System.out.printf("%03d ", i);
-            if (j % size == 0) {
+        
+        for (int i = start; (start < end) ? i <= end : i >= end;) {
+            if ((start - i) % size == 0 || (i - start) % size == 0) {
                 System.out.println();
             }
+            System.out.printf("%03d ", i);
             if (start < end) {
                 i++;
             } else {
                 i--;
             }
         }
-
     }
 }
