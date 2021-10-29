@@ -7,7 +7,7 @@ public class SumOneThird {
         int[] arr = { 10, 8, 9, 14, 11, 6, 15, 2, 3, 1, 5, 12, 13, 4, 7, 16, 17 };
         int sumWithOneThirdLength = 0;
 
-        /** Sorting Array */
+        /** Mengurutkan array */
         for (int i = 0; i < arr.length; i++) {
             int subs = 0;
             for (int j = i + 1; j < arr.length; j++) {
@@ -18,6 +18,8 @@ public class SumOneThird {
                 }
             }
         }
+
+        /** agar angka yang di print rata kanan */
         int biggestNumber = arr[arr.length - 1];
         int space = 0;
         while (biggestNumber > 0) {
@@ -25,6 +27,7 @@ public class SumOneThird {
             space++;
         }
 
+        /** Elemen yang termasuk arr.length / 3 */
         for (int i = 0; i < arr.length / 3; i++) {
             // Your Magic is Here
             int sum = 0;
@@ -42,6 +45,7 @@ public class SumOneThird {
 
         }
 
+        /** Untuk elemen array yang tidak termasuk arr.length / 3 */
         if (arr.length % 3 != 0) {
             int sum = 0;
             for (int i = (arr.length - (arr.length % 3)); i < arr.length; i++) {
