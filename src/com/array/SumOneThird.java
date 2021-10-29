@@ -42,19 +42,19 @@ public class SumOneThird {
 
         }
 
-        // if (arr.length % 3 != 0) {
-        // int sum = 0;
-        // for (int i = (arr.length - (arr.length % 3)); i < arr.length; i++) {
-        // sum += arr[i];
-        // if (i != arr.length - (arr.length % 3)) {
-        // System.out.printf(" + %" + space + "d", arr[i]);
-        // } else {
-        // System.out.printf("%" + space + "d", arr[i]);
-        // }
-        // }
-        // System.out.printf(" = %d\n", sum);
-        // sumWithOneThirdLength += sum;
-        // }
+        if (arr.length % 3 != 0) {
+            int sum = 0;
+            for (int i = (arr.length - (arr.length % 3)); i < arr.length; i++) {
+                sum += arr[i];
+                if (i != arr.length - (arr.length % 3)) {
+                    System.out.printf(" + %" + space + "d", arr[i]);
+                } else {
+                    System.out.printf("%" + space + "d", arr[i]);
+                }
+            }
+            System.out.printf(" = %d\n", sum);
+            sumWithOneThirdLength += sum;
+        }
 
         System.out.print("Sum of ");
         for (int j = 0; j < arr.length; j++) {
