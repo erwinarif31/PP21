@@ -1,9 +1,12 @@
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // System.out.printf("base %2d : ", 2);
-        // System.out.printf("base %2d : ", 8);
-        // System.out.printf("base %2d : ", 16);
-        System.out.printf("%s", (65 > 9) ? (char) 65 : 65);
+        int[] arr = { 10, 8, 9, 14, 11, 6, 15, 2, 3, 1, 5, 12, 13, 4, 7, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27,
+                28, 29, 30 };
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        System.out.println(sum);
     }
 }
