@@ -1,28 +1,32 @@
-import java.util.InputMismatchException;
+package com.loop;
+
 import java.util.Scanner;
 
 public class Factorial {
-    public static void main(String[] args) throws InputMismatchException {
+    public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        
+
         int number;
         long sum = 1;
+
+        /** INPUT */
         try {
             number = scan.nextInt();
             scan.close();
+
             if (number < 0) {
                 throw new Exception();
             }
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Masukkan nilai bilangan bulat >= 0");
             return;
         }
-        
-        System.out.printf("%d!", number);
 
+        /** OUTPUT */
+        System.out.printf("%d!", number);
         if (number != 0) {
             for (int i = number; i >= 1; i--) {
-                sum*=i;
+                sum *= i;
                 if (i == number) {
                     System.out.printf(" = %d", i);
                 } else {
@@ -32,7 +36,6 @@ public class Factorial {
         } else {
             sum = 1;
         }
-        
         System.out.printf(" = %d", sum);
     }
 }

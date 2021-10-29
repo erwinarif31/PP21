@@ -1,4 +1,7 @@
+package com.loop;
+
 import java.util.Scanner;
+
 public class Eyes {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -15,14 +18,15 @@ public class Eyes {
             return;
         }
 
-        for (int i = 0; i < size ; i++) {
-            for (int j = 0; j < size ; j++) {
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 if (j == i) {
                     System.out.printf("1 ");
                 } else {
                     System.out.printf("0 ");
                 }
             }
+
             System.out.println();
         }
     }

@@ -1,2 +1,9 @@
 *.class
-bin/P0201.class
+
+*.xml
+*.project
+*.class
+.gitignore
+bin/App.class
+Test.iml
+.classpath
