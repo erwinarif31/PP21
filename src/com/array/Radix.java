@@ -39,7 +39,7 @@ public class Radix {
                     System.out.printf("%d", c);
                 }
             }
-            System.out.println();
+            System.out.printf("%s", (i != divider.length - 1) ? "\n" : "");
         }
     }
 }
