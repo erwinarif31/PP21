@@ -7,9 +7,8 @@ public class Radix {
         Scanner scan = new Scanner(System.in);
 
         int n;
-        int[] binary;
-        int[] octal;
-        int[] hexa;
+        int[] arr;
+        int[] divider = { 2, 8, 16 };
 
         try {
             n = scan.nextInt();
@@ -17,56 +16,30 @@ public class Radix {
             if (n < 0 && n > 255) {
                 throw new Exception();
             }
-            binary = new int[8];
-            octal = new int[8];
-            hexa = new int[8];
         } catch (Exception e) {
+            System.out.println("Masukkan input >= 0!");
             return;
         }
 
-        // /** Decimal to Binary */
-        int decimal = n;
-        System.out.printf("base %2d: ", 2);
-        for (int i = (binary.length - 1); decimal > 0; i--) {
-            binary[i] = (decimal % 2);
-            decimal /= 2;
-        }
+        for (int i = 0; i < divider.length; i++) {
+            arr = new int[8];
+            int decimal = n;
+            System.out.printf("base %2d: ", divider[i]);
 
-        for (int i = 0; i < binary.length; i++) {
-            System.out.printf("%d", binary[i]);
-        }
-        System.out.println();
-
-        /** Decimal to Octal */
-        decimal = n;
-        System.out.printf("base %2d: ", 8);
-        for (int i = (octal.length - 1); decimal > 0; i--) {
-            octal[i] = (decimal % 8);
-            decimal /= 8;
-        }
-
-        for (int i = 0; i < octal.length; i++) {
-            System.out.printf("%d", octal[i]);
-        }
-        System.out.println();
-
-        /** Decimal to Hexagonal */
-        decimal = n;
-        System.out.printf("base %2d: ", 16);
-        for (int i = (hexa.length - 1); decimal > 0; i--) {
-            int modulo = (decimal % 16);
-            hexa[i] = (modulo > 9) ? (modulo + 55) : modulo;
-            decimal /= 16;
-        }
-
-        for (int i = 0; i < octal.length; i++) {
-            if (hexa[i] > 9) {
-            System.out.printf("%s", (char) hexa[i]);
-            } else {
-            System.out.printf("%d", hexa[i]);
+            for (int j = (arr.length - 1); decimal > 0; j--) {
+                int modulo = (decimal % divider[i]);
+                arr[j] = (modulo > 9) ? (modulo + 55) : modulo;
+                decimal /= divider[i];
             }
-            // System.out.printf("%s", (hexa[i] > 9) ? (char) hexa[i] : hexa[i]);
 
+            for (int c : arr) {
+                if (c > 9) {
+                    System.out.printf("%c", (char) c);
+                } else {
+                    System.out.printf("%d", c);
+                }
+            }
+            System.out.println();
         }
     }
 }
