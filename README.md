@@ -1,3 +1,1 @@
-## Getting Started
-
-Pengantar Pemrograman (+ Praktikum) Ganjil - 2021 
+## Pengantar Pemrograman (+ Praktikum) Ganjil - 2021 
