@@ -30,16 +30,17 @@ public class SumOneThird {
             int oneThirdOfArr = arr.length / 3;
             int sum = 0;
             int j = i;
+
             for (int k = 0; k < 3; k++) {
                 sum += arr[j];
                 System.out.printf("%s%" + space + "d", (j != i) ? " + " : "", arr[j]);
                 j += oneThirdOfArr;
             }
-
             System.out.printf(" = %d\n", sum);
+
             sumWithOneThirdLength += sum;
 
-            if ((i + 1) == oneThirdOfArr) {
+            if (i == (oneThirdOfArr - 1)) {
                 sum = 0;
                 for (int k = oneThirdOfArr * 3; k < arr.length; k++) {
                     sum += arr[k];
