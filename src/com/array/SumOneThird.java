@@ -2,12 +2,12 @@ package com.array;
 
 public class SumOneThird {
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 };
+        int[] arr = { 67, 74, 100, 88, 98, 13, 81, 40, 7, 49, 87, 16, 90, 62, 41, 15, 5 };
         int sumWithOneThirdLength = 0;
 
         /** Mengurutkan array */
         for (int i = 0; i < arr.length; i++) {
-            int subs = 0;
+            int subs;
             for (int j = i + 1; j < arr.length; j++) {
                 if (arr[i] > arr[j]) {
                     subs = arr[i];
@@ -17,7 +17,7 @@ public class SumOneThird {
             }
         }
 
-        /** agar angka yang di print rata kanan */
+        /** Agar angka yang di print rata kanan */
         int biggestNumber = arr[arr.length - 1];
         int space = 0;
         while (biggestNumber > 0) {
@@ -25,38 +25,29 @@ public class SumOneThird {
             space++;
         }
 
-        /** Elemen array yang termasuk arr.length / 3 */
-        /** BUG */
         for (int i = 0; i < arr.length / 3; i++) {
             // Your Magic is Here
+            int oneThirdOfArr = arr.length / 3;
             int sum = 0;
-            for (int j = i, y = 0; y < 3; j += (arr.length / 3), y++) {
+            int j = i;
+            for (int k = 0; k < 3; k++) {
                 sum += arr[j];
-                if (j != i) {
-                    System.out.printf(" + %" + space + "d", arr[j]);
-                } else {
-                    System.out.printf("%" + space + "d", arr[j]);
-                }
+                System.out.printf("%s%" + space + "d", (j != i) ? " + " : "", arr[j]);
+                j += oneThirdOfArr;
             }
 
             System.out.printf(" = %d\n", sum);
-
-            if (arr.length % 3 != 0 && i == (arr.length / 3) - 1) {
-                /** Elemen array yang tidak termasuk arr.length / 3 */
-                sumWithOneThirdLength += sum;
-                sum = 0;
-                for (int j = (arr.length - (arr.length % 3)); j < arr.length; j++) {
-                    sum += arr[j];
-                    if (j != arr.length - (arr.length % 3)) {
-                        System.out.printf(" + %" + space + "d", arr[j]);
-                    } else {
-                        System.out.printf("%" + space + "d", arr[j]);
-                    }
-                }
-                System.out.printf(" = %d\n", sum);
-            }
-
             sumWithOneThirdLength += sum;
+
+            if ((i + 1) == oneThirdOfArr) {
+                sum = 0;
+                for (int k = oneThirdOfArr * 3; k < arr.length; k++) {
+                    sum += arr[k];
+                    System.out.printf("%" + space + "d%s", arr[k], (k != arr.length - 1) ? " + " : " = " + sum + "\n");
+                }
+                System.out.printf("\n");
+                sumWithOneThirdLength += sum;
+            }
         }
 
         System.out.print("Sum of ");

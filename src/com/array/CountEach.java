@@ -43,5 +43,6 @@ public class CountEach {
                 System.out.printf("%d Angka %d\n", frequency[i], numbers[i]);
             }
         }
+
     }
 }
