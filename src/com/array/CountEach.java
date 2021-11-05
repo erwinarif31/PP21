@@ -1,6 +1,9 @@
 package com.array;
 
 import java.util.Scanner;
+
+import javax.print.attribute.IntegerSyntax;
+
 import java.util.InputMismatchException;
 
 public class CountEach {
@@ -19,9 +22,11 @@ public class CountEach {
             for (int i = 0; i < n; i++) {
                 numbers[i] = scan.nextInt();
             }
-            scan.close();
         } catch (InputMismatchException e) {
+            scan.close();
             return;
+        } finally {
+            scan.close();
         }
 
         for (int i = 0; i < numbers.length; i++) {

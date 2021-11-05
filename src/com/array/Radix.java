@@ -12,13 +12,15 @@ public class Radix {
 
         try {
             n = scan.nextInt();
-            scan.close();
-            if (n < 0 && n > 255) {
+            if (n < 0 || n > 255) {
                 throw new Exception();
             }
         } catch (Exception e) {
-            System.out.println("Masukkan input >= 0!");
+            System.out.println("Masukkan input >= 0 dan <= 255 !");
+            scan.close();
             return;
+        } finally {
+            scan.close();
         }
 
         for (int i = 0; i < divider.length; i++) {
