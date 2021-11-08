@@ -2,8 +2,6 @@ package com.array;
 
 import java.util.Scanner;
 
-import javax.print.attribute.IntegerSyntax;
-
 import java.util.InputMismatchException;
 
 public class CountEach {

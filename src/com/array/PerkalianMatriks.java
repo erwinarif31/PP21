@@ -8,8 +8,8 @@ package com.array;
 
 public class PerkalianMatriks {
     public static void main(String[] args) {
-        int[][] arr1 = { { 1, 2, 5 }, { 3, 4, 6 }, { 7, 8, 9 } };
-        int[][] arr2 = { { 1, 2 }, { 3, 4 }, { 5, 5 } };
+        int[][] arr1 = { { 1, 1, 1 } };
+        int[][] arr2 = { { 1 }, { 2 }, { 3 } };
         int row1 = arr1.length;
         int row2 = arr2.length;
         int col1 = arr1[0].length;

@@ -17,7 +17,7 @@ public class SumOneThird {
                 biggestNumber /= 10;
                 space++;
             }
-            
+
             for (int k = 0; k < 3; k++) {
                 sum += arr[i];
                 System.out.printf("%s%" + space + "d", (i != index) ? " + " : "", arr[i]);
